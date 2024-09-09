@@ -46,7 +46,7 @@ export default async (options) => {
         setIndex(index < choices.length - 1 ? index + 1 : choices.length - 1);
       } else {
         const foundIndex = choices.findIndex((choice) => {
-          const choiceValue = choice.value.toLowerCase();
+          const choiceValue = choice.key ? choice.key.toLowerCase() : choice.value.toLowerCase();
           const keyName = key.name.toLowerCase();
           return choiceValue.startsWith(keyName);
         });
